@@ -22,7 +22,7 @@
 
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
-| item         | string     | null: false                    |
+| name         | string     | null: false                    |
 | descriptions | text       | null: false                    |
 | category_id  | integer    | null: false                    |
 | status_id    | integer    | null: false                    |
@@ -55,11 +55,11 @@
 | Column        | Type      | Options        |
 | ------------- | --------- | -------------- |
 | prefecture_id | integer   | null: false    |
-| postal_code   | integer   | null: false    |
+| postal_code   | string    | null: false    |
 | city          | string    | null: false    |
-| address       | integer   | null: false    |
-| building      | string    | null: false    |
-| phone         | integer   | null: false    |
+| address       | string    | null: false    |
+| building      | string    |                |
+| phone         | string    | null: false    |
 
 ### Association
 
