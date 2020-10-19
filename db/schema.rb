@@ -12,16 +12,16 @@
 
 ActiveRecord::Schema.define(version: 2020_10_17_081242) do
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.string "email", limit: 191, default: "", null: false
-    t.string "encrypted_password", limit: 191, default: "", null: false
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
     t.string "family_name", null: false
     t.string "first_name", null: false
     t.string "family_kana", null: false
     t.string "first_kana", null: false
     t.string "nickname", null: false
     t.date "birthday", null: false
-    t.string "reset_password_token", limit: 191
+    t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
