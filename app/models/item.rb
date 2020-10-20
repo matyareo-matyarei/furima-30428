@@ -4,7 +4,11 @@ class Item < ApplicationRecord
   validates :image, presence: true
 
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to_active_hash :category, :status, :burden, :area, :schedule
+  belongs_to_active_hash :category
+  belongs_to_active_hash :status
+  belongs_to_active_hash :burden
+  belongs_to_active_hash :area
+  belongs_to_active_hash :schedule
 
   validates :name, :descriptions, :category, :status, :burden, :area, :schedule, :price, presence: true
 
