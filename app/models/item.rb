@@ -1,6 +1,7 @@
 class Item < ApplicationRecord
   belongs_to :user
   has_one_attached :image
+  has_many :orders
 
   validates :image, presence: true
   validates :price, numericality: { message: 'Half-width number' }
