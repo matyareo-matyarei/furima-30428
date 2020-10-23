@@ -2,19 +2,19 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    @item_order = ItemOrder.new
     @item = Item.find(params[:item_id])
     unless current_user.id == @item.user_id
-      @order = Order.new
     else
       redirect_to root_path
     end
   end
 
   def create
-    @order = Order.new(order_params)
+    @item_order = ItemOrder.new(order_params)
     @item = Item.find(params[:item_id])
-    if @order.valid?
-      @order.save
+    if @item_order.valid?
+      @item_order.save
       return redirect_to root_path
     else
       render 'index'
@@ -24,7 +24,8 @@ class OrdersController < ApplicationController
   private
   
   def order_params
-    params.permit(:item_id).merge(user_id: current_user.id,token: params[:token])
+    params.require(:item_order).permit(:postal_code, :prefecture_id, :city, :addresses, :building, :phone_number).merge(item_id: params[:item_id], user_id: current_user.id, token: params[:token])
+
   end
 
 end
