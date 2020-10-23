@@ -39,6 +39,11 @@ RSpec.describe ItemOrder, type: :model do
     expect(@item_order.errors.full_messages).to include("Addresses can't be blank")
   end
 
+  it 'buildingは空でも登録できる' do
+    @item_order.building = nil
+    expect(@item_order).to be_valid
+  end
+  
   it 'phone_numberが空では登録できない' do
     @item_order.phone_number = nil
     @item_order.valid?
