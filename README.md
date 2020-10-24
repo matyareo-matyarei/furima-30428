@@ -57,9 +57,9 @@
 | prefecture_id | integer    | null: false                    |
 | postal_code   | string     | null: false                    |
 | city          | string     | null: false                    |
-| address       | string     | null: false                    |
+| addresses     | string     | null: false                    |
 | building      | string     |                                |
-| phone         | string     | null: false                    |
+| phone_number  | string     | null: false                    |
 | order         | references | null: false, foreign_key: true |
 
 ### Association
