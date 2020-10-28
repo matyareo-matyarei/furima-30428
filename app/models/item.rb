@@ -1,9 +1,9 @@
 class Item < ApplicationRecord
   belongs_to :user
-  has_one_attached :image
+  has_many_attached :images
   has_one :order
 
-  validates :image, presence: true
+  validates :images, presence: true
   validates :price, numericality: { message: 'Half-width number' }
   validates_inclusion_of :price, in: 300..9_999_999, message: 'Out of setting range'
 
