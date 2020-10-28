@@ -8,10 +8,10 @@ RSpec.describe Item, type: :model do
     it '商品画像、商品名、商品説明、カテゴリー情報、商品の状態、配料の負担、配送元の地域、配送までの日数、価格が入っていれば出品登できる' do
       expect(@item).to be_valid
     end
-    it 'imageが無いと登録できない' do
-      @item.image = nil
+    it 'imagesが無いと登録できない' do
+      @item.images = nil
       @item.valid?
-      expect(@item.errors.full_messages).to include("Image can't be blank")
+      expect(@item.errors.full_messages).to include("Images can't be blank")
     end
     it 'nameが空だと登録できない' do
       @item.name = ''
@@ -58,7 +58,7 @@ RSpec.describe Item, type: :model do
       @item.valid?
       expect(@item.errors.full_messages).to include('Price Out of setting range')
     end
-    it 'priceは半角数字のみ登録できる' do
+    it 'priceは全角数字だと登録できない' do
       @item.price = '３００'
       @item.valid?
       expect(@item.errors.full_messages).to include('Price Half-width number')
