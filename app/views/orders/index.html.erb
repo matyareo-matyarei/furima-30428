@@ -37,6 +37,14 @@
     <%= render 'shared/error_messages', model: f.object %>
     <%# カード情報の入力 %>
     <div class='credit-card-form'>
+
+<div class='purchase-btn'>
+  <span class='purchase-btn-text'>クレジットカード登録</span>
+  <a href="/cards/new">
+    <%= image_tag 'クレカ画像.jpg' , size: '185x50' ,class: "purchase-btn-icon" %>
+  </a>
+</div>
+
       <h1 class='info-input-haedline'>
         クレジットカード情報入力
       </h1>

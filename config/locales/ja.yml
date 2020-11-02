@@ -18,6 +18,8 @@ ja:
         burden_id: 配送料の負担
         area_id: 配送元の地域
         schedule_id: 配送までの日数
+      card:
+        card_token: 正しくカード情報
   activemodel:
     attributes:
       item_order:
