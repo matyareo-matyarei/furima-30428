@@ -12,7 +12,7 @@ class OrdersController < ApplicationController
     if @item_order.valid?
       pay_item
       @item_order.save
-      redirect_to root_path
+      # redirect_to root_path
     else
       render 'index'
     end
@@ -25,7 +25,7 @@ class OrdersController < ApplicationController
   end
 
   def pay_item
-    Payjp.api_key = ENV['PAYJP_SECRET_KEY']
+    Payjp.api_key = ENV['PAYJP_SECRET_KEY'] # 秘密鍵の環境変数を読み込む
     Payjp::Charge.create(
       amount: @item[:price],         # 商品の値段
       card: order_params[:token],    # カードトークン

@@ -1,0 +1,28 @@
+.success {
+  width: 700px;
+  height: 300px;
+  margin: 200px auto 10px;
+  font-size: 25px;
+  color: #3ccace;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.success h3 {
+  margin: 0px auto;
+}
+
+
+.btn {
+  width: 200px;
+  margin: 10px auto 0px;
+  font-size: 20px;
+  padding: 15px;
+  border: 1px solid white;
+  color: white;
+  background-color: #3ccace;
+  display: block;
+}
