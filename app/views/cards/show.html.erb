@@ -1,0 +1,53 @@
+<%= render "shared/second-header" %>
+<div class='transaction-contents'>
+  <div class='transaction-main'>
+    <div class='info-input-haedline'>
+    <%= "#{current_user.nickname}さんの "%>
+    </div>
+    <h1 class='transaction-title-text'>
+      登録しているクレジットカード
+    </h1>
+
+    <%# カード情報の入力 %>
+    <div class='credit-card-form'>
+
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">カード情報</label>
+        </div>
+        <div class="input-default">
+          <%= "**** **** **** " + @card[:last4] %>   
+        </div>
+
+        <div class='available-card'>
+          <%= image_tag 'card-visa.gif', class: 'card-logo'%>
+          <%= image_tag 'card-mastercard.gif', class: 'card-logo'%>
+          <%= image_tag 'card-jcb.gif', class: 'card-logo'%>
+          <%= image_tag 'card-amex.gif', class: 'card-logo'%>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">有効期限</label>
+        </div>
+        <div class='input-expiration-date-wrap'>
+          <%= @card[:exp_year] %>
+          <p>年</p>
+          <%= @card[:exp_month] %>
+          <p>月</p>
+        </div>
+      </div>
+    </div>
+    <%# /カード情報の入力 %>
+    <div class="sell-btn-contents">
+      <p>
+      <%= link_to "更新する", "#",class:"item-red-btn" %>
+      </p><br>
+      <%=link_to 'もどる', root_path, class:"back-btn2" %>
+    </div>
+
+  </div>
+</div>
+
+
+<%= render "shared/second-footer" %>

@@ -39,10 +39,8 @@
     <div class='credit-card-form'>
 
 <div class='purchase-btn'>
-  <span class='purchase-btn-text'>クレジットカード登録</span>
-  <a href="/cards/new">
-    <%= image_tag 'クレカ画像.jpg' , size: '185x50' ,class: "purchase-btn-icon" %>
-  </a>
+  <span class='purchase-btn-text'>登録カード確認</span>
+    <%= link_to image_tag('クレカ画像.jpg' , size: '185x50', class: "purchase-btn-icon"), card_path(current_user.id)  %>
 </div>
 
       <h1 class='info-input-haedline'>
