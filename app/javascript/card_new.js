@@ -1,4 +1,4 @@
-if (document.URL.match( /orders/ )) {
+if (document.URL.match( /cards/ )) {
   const pay = () => {
     
     Payjp.setPublicKey(process.env.PAYJP_PUBLIC_KEY);
@@ -10,10 +10,10 @@ if (document.URL.match( /orders/ )) {
       const formData = new FormData(formResult);
   
       const card = {
-        number: formData.get("item_order[number]"),
-        cvc: formData.get("item_order[cvc]"),
-        exp_month: formData.get("item_order[exp_month]"),
-        exp_year: `20${formData.get("item_order[exp_year]")}`,
+        number: formData.get("card[number]"),
+        cvc: formData.get("card[cvc]"),
+        exp_month: formData.get("card[exp_month]"),
+        exp_year: `20${formData.get("card[exp_year]")}`,
       };
       Payjp.createToken(card, (status, response) => {
         if (status == 200) {
@@ -28,6 +28,7 @@ if (document.URL.match( /orders/ )) {
         document.getElementById("card-exp-year").removeAttribute("name");
   
         document.getElementById("charge-form").submit();
+        document.getElementById("charge-form").reset();
       });
     });
   };
