@@ -20,6 +20,7 @@ ja:
         schedule_id: 配送までの日数
       card:
         card_token: 正しくカード情報
+        customer_token: 正しくカード情報
   activemodel:
     attributes:
       item_order:

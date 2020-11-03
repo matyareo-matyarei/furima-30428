@@ -30,7 +30,7 @@ class OrdersController < ApplicationController
     customer_token = current_user.card.customer_token # ログインユーザーの顧客トークン定義
     Payjp::Charge.create(
       amount: @item[:price],         # 商品の値段
-      customer: customer_token, # 顧客のトークン
+      customer: customer_token,      # 顧客のトークン
       currency: 'jpy'                # 通貨の種類（日本円）
     )
   end
