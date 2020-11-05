@@ -16,8 +16,8 @@ ja:
         category_id: カテゴリー
         status_id: 商品の状態
         burden_id: 配送料の負担
-        area_id: 配送元の地域
-        schedule_id: 配送までの日数
+        area_id: 発送元の地域
+        schedule_id: 発送までの日数
       card:
         card_token: 正しくカード情報
         customer_token: 正しくカード情報
